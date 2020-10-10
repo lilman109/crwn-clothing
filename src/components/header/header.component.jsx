@@ -9,14 +9,14 @@ const Header = () => {
 			<Link className="logo-container" to="/">
 				<Logo className="logo" />
 			</Link>
-			<Link className="options">
+			<div className="options">
 				<Link className="option" to="/shop">
 					SHOP
 				</Link>
 				<Link className="option" to="/shop">
 					CONTACT
 				</Link>
-			</Link>
+			</div>
 		</div>
 	);
 };
