@@ -9,6 +9,7 @@ const CartIcon = ({ toggleCartHidden, cartItems }) => {
 	const totalItems = cartItems.reduce((total, cartItem) => {
 		return total + cartItem.quantity;
 	}, total);
+
 	return (
 		<div className='cart-icon' onClick={toggleCartHidden}>
 			{console.log('total', totalItems)}
