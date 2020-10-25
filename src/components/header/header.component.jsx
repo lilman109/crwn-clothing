@@ -29,7 +29,7 @@ const Header = ({ currentUser, hidden }) => {
 						SIGN IN
 					</Link>
 				)}
-				<CartIcon value={2} />
+				<CartIcon />
 			</div>
 			{hidden ? null : <CartDropDown />}
 		</div>
