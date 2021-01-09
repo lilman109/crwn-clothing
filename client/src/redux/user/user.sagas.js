@@ -17,14 +17,15 @@ import {
 	signUpFailure,
 } from './user.actions.js';
 
-export function* getSnapshotFromUserAuth(userAuth, addtionalData) {
+export function* getSnapshotFromUserAuth(userAuth, additionalData) {
 	try {
 		const userRef = yield call(
 			createUserProfileDocument,
 			userAuth,
-			addtionalData
+			additionalData
 		);
 		const snapShot = yield userRef.get();
+
 		yield put(signInSuccess({ id: snapShot.id, ...snapShot.data() }));
 	} catch (error) {
 		yield put(signInFailure(error));
@@ -87,7 +88,7 @@ export function* onSignOutStart() {
 export function* signUp({ payload: { email, password, displayName } }) {
 	try {
 		const { user } = yield auth.createUserWithEmailAndPassword(email, password);
-		yield put(signUpSuccess({ user, addtionalData: { displayName } }));
+		yield put(signUpSuccess({ user, additionalData: { displayName } }));
 	} catch (error) {
 		yield put(signUpFailure(error));
 	}
@@ -97,8 +98,8 @@ export function* onSignUpStart() {
 	yield takeLatest(UserActionTypes.SIGN_UP_START, signUp);
 }
 
-export function* signInAfterSignUp({ payload: { user, addtionalData } }) {
-	yield getSnapshotFromUserAuth(user, addtionalData);
+export function* signInAfterSignUp({ payload: { user, additionalData } }) {
+	yield getSnapshotFromUserAuth(user, additionalData);
 }
 
 export function* onSignUpSuccess() {

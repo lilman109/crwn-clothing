@@ -29,6 +29,7 @@ const SignUp = ({ signUpStart }) => {
 
 			return;
 		}
+
 		signUpStart({ displayName, email, password });
 	};
 
