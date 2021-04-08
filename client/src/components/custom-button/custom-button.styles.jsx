@@ -12,14 +12,13 @@ const defaultStyles = css`
 `;
 
 const googleSignInStyles = css`
-  background-color: #4285f4;
-  color: white;
+	background-color: #4285f4;
+	color: white;
 
-  &:hover {
-    background-color: #357ae8;
-    border: none;
-  }
-}
+	&:hover {
+		background-color: #357ae8;
+		border: none;
+	}
 `;
 
 const invertedStyles = css`
