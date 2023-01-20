@@ -6,6 +6,7 @@ import { addItem } from '../../redux/cart/cart.actions';
 
 const CollectionItem = ({ item, addItem }) => {
 	const { name, price, imageUrl } = item;
+  const [hoge, setHoge] = useState("")
 	return (
 		<div className='collection-item'>
 			<div

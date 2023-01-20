@@ -13,6 +13,7 @@ import { checkUserSession } from './redux/user/user.actions';
 
 const App = ({ checkUserSession, currentUser }) => {
 	useEffect(() => {
+		console.log('check user session');
 		checkUserSession();
 	}, [checkUserSession]);
 

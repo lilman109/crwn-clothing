@@ -3,7 +3,14 @@ import './collection-preview.styles.scss';
 import CollectionItem from '../collection-item/collection-item.component.jsx';
 import { withRouter } from 'react-router-dom';
 
-const CollectionPreview = ({ title, items, routeName, match, history }) => {
+const CollectionPreview = ({
+	title,
+	items,
+	routeName,
+	match,
+	history,
+	...otherProps
+}) => {
 	return (
 		<div className='collection-preview'>
 			<h1
